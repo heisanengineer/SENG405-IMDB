@@ -2,8 +2,6 @@ package com.imdbListApp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,19 +9,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.gson.Gson;
 import com.imdbListApp.Integrations.ImdbIntegration;
 import com.imdbListApp.R;
 import com.imdbListApp.activities.DetailActivity;
 import com.imdbListApp.entities.Movie;
 import com.squareup.picasso.Picasso;
-
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>  {
@@ -77,8 +70,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                     _context.startActivity(intent);
                 }
             });
-
         }
+
         public void SetData(Movie movie,int position){
             this.header.setText(movie.title);
             this.content.setText(movie.overview);
@@ -86,6 +79,5 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             Picasso.get().load(ImdbIntegration.BASE_POSTER_URL+movie.poster_path).into(image);
             this.movie=movie;
         }
-
     }
 }

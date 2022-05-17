@@ -8,6 +8,7 @@ public class Movie {
     public String poster_path;
     public double vote_average;
     public long vote_count;
+    public String original_language;
 }
 /*
 {

@@ -8,21 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.imdbListApp.Integrations.ImdbIntegration;
 import com.imdbListApp.R;
 import com.imdbListApp.entities.Movie;
 import com.squareup.picasso.Picasso;
-
 import java.lang.reflect.Type;
+
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -41,9 +38,13 @@ public class DetailActivity extends AppCompatActivity {
         TextView header = (TextView) findViewById(R.id.detail_title);
         TextView imdbavg = (TextView) findViewById(R.id.detail_avg);
         TextView content = (TextView) findViewById(R.id.detail_content);
+        TextView date = (TextView) findViewById(R.id.detail_date);
+        TextView lang = (TextView) findViewById(R.id.detail_lang);
         header.setText(movie.title);
         imdbavg.setText(String.valueOf(movie.vote_average));
         content.setText(movie.overview);
+        date.setText(movie.release_date);
+        lang.setText(movie.original_language);
         ImageView image = (ImageView) findViewById(R.id.detail_image);
         Picasso.get().load(ImdbIntegration.BASE_POSTER_URL+movie.poster_path).into(image);
 
@@ -56,7 +57,6 @@ public class DetailActivity extends AppCompatActivity {
         });
     }
 
-
     private void hideSystemBars() {
         WindowInsetsControllerCompat windowInsetsController =
                 ViewCompat.getWindowInsetsController(getWindow().getDecorView());
@@ -68,5 +68,4 @@ public class DetailActivity extends AppCompatActivity {
         );
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
     }
-
 }

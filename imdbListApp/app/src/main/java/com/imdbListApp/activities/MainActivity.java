@@ -7,14 +7,10 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
@@ -24,7 +20,6 @@ import com.imdbListApp.R;
 import com.imdbListApp.adapters.MovieAdapter;
 import com.imdbListApp.entities.DataResult;
 import com.imdbListApp.entities.Movie;
-
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -57,9 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Error",error.getMessage());
             }
         });
-
     }
-
 
     private void hideSystemBars() {
         WindowInsetsControllerCompat windowInsetsController =
@@ -75,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
     public void setList(List<Movie> movies){
         MovieAdapter adapter= new MovieAdapter(this,movies);
         recyclerView.setAdapter(adapter);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
