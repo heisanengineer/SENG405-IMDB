@@ -30,5 +30,4 @@ public class ImdbIntegration {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, API_URL,listener,errorListener);
         queue.add(stringRequest);
     }
-
 }
