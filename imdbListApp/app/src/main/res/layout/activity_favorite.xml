@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.FavoriteActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -16,16 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imdblogo" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="45dp"
-        android:layout_height="50dp"
-        android:background="#FFFFFF"
-        android:onClick="openFavoriteActiovity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:srcCompat="@android:drawable/star_big_on" />
-
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="0dp"
@@ -35,12 +25,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/prev"
-                android:layout_width="match_parent"
-                android:layout_height="640dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/prev"
+            android:layout_width="match_parent"
+            android:layout_height="766dp" />
 
     </FrameLayout>
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="74dp"
+        android:layout_height="37dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

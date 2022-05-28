@@ -17,6 +17,8 @@ import com.imdbListApp.R;
 import com.imdbListApp.activities.DetailActivity;
 import com.imdbListApp.entities.Movie;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>  {
